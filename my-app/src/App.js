@@ -1,30 +1,27 @@
 
 import './App.css';
-import Item from "./components/Item"
+import Header from './components/Header';
+import List from './components/List';
 
 
 function App() {
-  
 
     var list = [
-      {title: 'Banana', price:20},
-      {title: 'Chocolate', price:50},
-      {title: 'Honey', price:10}
+      {title: 'Banana', img:'https://domf5oio6qrcr.cloudfront.net/medialibrary/6372/202ebeef-6657-44ec-8fff-28352e1f5999.jpg', price:"Price: 2$"},
+      {title: 'Chocolate',img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKupxLW7whEmZ38FC_U56f3bBNZXjoC6VjZA&usqp=CAU', price:"Price: 5$"},
+      {title: 'Honey',img:'https://www.clalit.co.il/he/new_article_images/lifestyle/sweets%20and%20snacks/GettyImages-810340892/medium.jpg', price:"Price: 3$"}
     ];
 
   return ( <div>
 
   
   
-      <h2>This is our Grocery shop!</h2>
+     <Header/>
 
+     <List list={list}/>
+
+   
      
-      <Item title={list[0].title} price={list[0].price} />
-
-      <Item title={list[1].title} price={list[1].price} />
-
-      <Item title={list[2].title} price={list[2].price} />
- 
   </div>
 
 
