@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 function Item(props){
     
 
+
   
   return(
     <Link to={`/${props.title}`}>    
@@ -19,11 +20,12 @@ function Item(props){
         <img className="circle-img" src={props.img} alt="avatar_img" />
       </div>
       <div className="bottom">
-        <p className="info">{props.price}</p>     
+        <p className="info">price: {props.price}$</p>
       </div>
     </div>
     </Link>
     );
+    
 
 
     
