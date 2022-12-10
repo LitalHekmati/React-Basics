@@ -8,17 +8,17 @@ function Cart(props) {
     var sum=0;
 
     const addList=(event)=>{
-       //fetch("http://localhost:3000/add/"+props.chosenList)
+    //    //fetch("http://localhost:3000/add/"+props.chosenList)
    
-    fetch('http://localhost:3000/add', {
-        method: 'POST',
-        body: JSON.stringify(props.chosenList)
-       })
-       .then((response) => response.json())
-       .then((json) => {
-         // you can do what ever you want here
-         console.log(json);
-       })
+    // fetch('http://localhost:3000/add', {
+    //     method: 'POST',
+    //     body: JSON.stringify(props.chosenList)
+    //    })
+    //    .then((response) => response.json())
+    //    .then((json) => {
+    //      // you can do what ever you want here
+    //      console.log(json);
+    //    })
     }
 
     props.chosenList.forEach(element => {
