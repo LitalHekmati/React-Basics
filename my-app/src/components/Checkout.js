@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
-
+import { chosenList } from "./Info";
+import axios from "axios"
 
 
 function Checkout(props) {
@@ -9,6 +10,7 @@ function Checkout(props) {
   const [name, setName] = useState('');
   const [id, setId] = useState('');
   const [phone, setPhone] = useState('');
+  var list=chosenList
 
 
   // function to handle changes to the input field
@@ -28,9 +30,23 @@ function Checkout(props) {
 
   const saveToDb = (event) => {
     // update the input state with the current value of the input field
+    console.log(chosenList);
+   // fetch("http://localhost:3000/checkout/saveUser/"+name+"/"+id+"/"+phone+"/"+chosenList)
+   list= JSON.stringify(chosenList) 
+   console.log(list);
+  //  fetch("http://localhost:3000/checkout",{
 
-    fetch("http://localhost:3000/checkout/saveUser/"+name+"/"+id+"/"+phone)
-    setName("");
+  //  method:"POST",
+  //  mode: "no-cors",
+  //  headers: {'Content-Type':'application/json'},
+  //  body:list
+
+  //  })
+
+
+  axios.post("http://localhost:3000/checkout",chosenList)
+   
+   setName("");
     setId("");
     setPhone("");
 
