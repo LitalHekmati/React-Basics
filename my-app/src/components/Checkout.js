@@ -44,7 +44,7 @@ function Checkout(props) {
   //  })
 
 
-  axios.post("http://localhost:3000/checkout",chosenList)
+  axios.post("http://localhost:3000/checkout",{itemList: chosenList, userData: {name: name, id: id, phone: phone}})
    
    setName("");
     setId("");
@@ -61,7 +61,7 @@ function Checkout(props) {
           <input type="text" placeholder="Id" value={id} onChange={idHandleChange}/>
           <input type="text" placeholder="Phone" value={phone} onChange={phoneHandleChange} />
           <Link to={"/"}>
-          <button onClick={saveToDb} type="submit">Save me</button>
+          <button className="submit-btn" onClick={saveToDb} type="submit">Save</button>
           </Link>
           </div>
       );

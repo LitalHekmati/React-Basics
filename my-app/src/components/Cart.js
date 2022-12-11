@@ -28,7 +28,7 @@ function Cart(props) {
     return <div>
         {props.chosenList.map((product) =>{
             return<Item title={product.title} img={product.img} price={product.price} /> 
-    })};
+    })}
     <h1>Total amount: {sum}$</h1>
     <Link to={"/checkout"}>
         <h1>checkout</h1>

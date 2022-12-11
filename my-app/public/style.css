@@ -8,7 +8,12 @@ body {
   background-color: #dfe6e9;
   text-align: center;
 }
-
+h1 {
+  text-align: center;
+  font-size: 2em;
+  color: #012051;
+  margin: 20px 0 30px;
+}
 .heading {
   text-align: center;
   font-size: 2em;
@@ -121,3 +126,45 @@ footer p {
   color: #ccc;
 }
 
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+}
+
+.submit-btn:hover {
+  background-color: #c4b3da; /* Green */
+  color: white;
+}
+
+.submit-btn {
+  background: #e7c2e6;
+  color: white;
+  border-style: outset;
+  border-color: #ffffff;
+  height: 50px;
+  width: 100px;
+  font: bold15px arial,sans-serif;
+  text-shadow: none;
+  border-radius: 10%;
+}
+
+.add-btn {
+  background: #2b0f2a;
+  color: white;
+  border-style: outset;
+  border-color: #ffffff;
+  height: 50px;
+  width: 50px;
+  font: bold15px arial,sans-serif;
+  text-shadow: none;
+  border-radius: 10%;
+}
+
+.add-btn:hover {
+  background-color: #c4b3da; 
+  cursor: pointer;
+  color: white;
+}

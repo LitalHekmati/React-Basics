@@ -30,7 +30,7 @@ function Info(props){
         <h2 className="name">{newItem.title}</h2>
         <img className="circle-img" src={newItem.img} alt="avatar_img" />
         <div>
-        <button onClick={add}>+</button> 
+        <button className="add-btn" onClick={add}>+</button> 
       </div>
       </div>
   

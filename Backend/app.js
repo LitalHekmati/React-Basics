@@ -1,10 +1,13 @@
-
 const express=require('express');
 const bodyParser= require('body-parser');
 const mongoose=require('mongoose');
 
 
-const app=express();
+
+var app=express();
+var cors = require('cors');
+app.use(cors());
+
 
 
 
@@ -18,7 +21,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/shoppingBagDB')
 
 const itemsSchema = {
     name: String,
-    price: String
+    price: Number
 };
     
 const Item=  mongoose.model("Item",itemsSchema);
@@ -60,15 +63,29 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(bodyParser.json())
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "YOUR-DOMAIN.TLD"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,Content-Type,application/json");
-    next();
-  });
   
 
 app.post("/checkout", (req, res) => {
-    console.log(req.body);
+    let result = req.body.itemList
+
+    var newItems=[]
+    result.forEach(element => {
+        const newItem = new Item ({
+            name: element.title,
+            price: element.price
+        })
+        newItems.push(newItem)
+    });
+
+    const newUser=new User({
+        name: req.body.userData.name,
+        Id: req.body.userData.id,
+        Phone: req.body.userData.phone,
+        Items: newItems
+    })
+
+    newUser.save();
+    res.redirect("/");
 
     // Access the array from the object
   //  const array = data.list;
@@ -80,4 +97,3 @@ app.post("/checkout", (req, res) => {
 app.listen(3000, () => {
     console.log("listening on port 3000!");
 })
-
